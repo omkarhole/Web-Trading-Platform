@@ -21,7 +21,7 @@ module.exports.Login = async (req, res, next) => {
      const token = createSecretToken(user._id);
      res.cookie("token", token, {
        // updated by chatgpt 
- httpOnly: false,       // (OK for now)
+ httpOnly: true,       // (OK for now)
   secure: true,          // ✅ needed over HTTPS
   sameSite: "None",      // ✅ needed cross-domain
      });
