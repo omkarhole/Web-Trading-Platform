@@ -13,7 +13,7 @@ const SellActionWindow=({uid})=>{
 
 
       const handleSellClick=()=>{
-        axios.post("http://localhost:3005/sellOrder",{
+        axios.post("https://zerodha-backend-9buv.onrender.com/sellOrder",{
             name:uid,
             qty:stockQuantity,
             price:stockPrice,
