@@ -257,6 +257,19 @@ app.post("/sellOrder",async(req,res)=>{
     sellOrder.save();
     res.send(" sell order saved !");
 })
+app.post("/api/verify", (req, res) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.json({ status: false, message: "No token found" });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.TOKEN_SECRET); // TOKEN_SECRET from .env
+    return res.json({ status: true, user: decoded.email }); // you can return other user info if needed
+  } catch (err) {
+    return res.json({ status: false, message: "Invalid token" });
+  }
+});
 
 
 app.listen(PORT,()=>{
