@@ -24,11 +24,11 @@ const Home = () => {
       }
 
       try {
-        const { data } = await axios.post(
-          "/api/verify",
-          {},
-          { withCredentials: true }
-        );
+      const { data } = await axios.post(
+  "https://zerodha-backend-9buv.onrender.com/api/verify", // ✅ full backend URL
+  {},
+  { withCredentials: true }
+);
 
         const { status, user } = data;
 
