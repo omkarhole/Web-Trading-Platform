@@ -5,11 +5,11 @@ import Menu from "./Menu";
 const TopBar = () => {
   return (
     
-  //  <div className="topbar-container">
+   <div className="topbar-container">
 
 {/* logout functionality added  */}
 
-// <a onClick={Logout}>LOGOUT</a>
+{/* // <a onClick={Logout}>LOGOUT</a> */}
      
     
       <div className="indices-container">
