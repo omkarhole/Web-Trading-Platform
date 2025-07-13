@@ -70,7 +70,7 @@ const Home = () => {
   // ✅ Only renders when authenticated
   return (
     <>
-{/*       <TopBar  Logout={Logout} /> */}
+      <TopBar  />
       <Dashboard />
       <ToastContainer />
     </>
