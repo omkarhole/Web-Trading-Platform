@@ -9,7 +9,7 @@ const TopBar = () => {
 
 {/* logout functionality added  */}
 
-<a onClick={Logout}>LOGOUT</a>
+// <a onClick={Logout}>LOGOUT</a>
      
     
       <div className="indices-container">
