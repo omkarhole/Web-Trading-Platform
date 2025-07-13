@@ -2,10 +2,10 @@ import React from "react";
 
 import Menu from "./Menu";
 
-const TopBar = ({Logout}) => {
+const TopBar = () => {
   return (
     
-    <div className="topbar-container">
+  //  <div className="topbar-container">
 
 {/* logout functionality added  */}
 
