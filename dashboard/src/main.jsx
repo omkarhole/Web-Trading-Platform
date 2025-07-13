@@ -17,17 +17,19 @@ createRoot(document.getElementById('root')).render(
      <CookiesProvider>
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-         <Route path="/signup" element={<Signup />} />
-        {/* <Route path="/*" element={<Home />} />     */}
-        <Route
+{/* change due to login error         
+<Route path="/login" element={<Login />} />
+         <Route path="/signup" element={<Signup />} /> */}
+           
+{/*         <Route
           path="/*"
           element={
             <PrivateRoute>
               <Home />
              </PrivateRoute>
           }
-        />
+        /> */}
+         <Route path="/*" element={<Home />} />
       </Routes>
     </BrowserRouter>
     </CookiesProvider>
