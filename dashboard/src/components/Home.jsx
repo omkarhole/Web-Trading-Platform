@@ -10,67 +10,67 @@ import Dashboard from "./Dashboard";
 
 const Home = () => {
 //authentication process
-  const navigate = useNavigate();
-  const [cookies, removeCookie] = useCookies(["token"]);
-  const [username, setUsername] = useState("");
-  const [loading, setLoading] = useState(true);
+//   const navigate = useNavigate();
+//   const [cookies, removeCookie] = useCookies(["token"]);
+//   const [username, setUsername] = useState("");
+//   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const verifyCookie = async () => {
-      // If no token at all, redirect immediately
-      if (!cookies.token) {
-        navigate("/login");
-        return;
-      }
+//   useEffect(() => {
+//     const verifyCookie = async () => {
+//       // If no token at all, redirect immediately
+//       if (!cookies.token) {
+//         navigate("/login");
+//         return;
+//       }
 
-      try {
-      const { data } = await axios.post(
-  "https://zerodha-backend-9buv.onrender.com/api/verify", // ✅ full backend URL
-  {},
-  { withCredentials: true }
-);
+//       try {
+//       const { data } = await axios.post(
+//   "https://zerodha-backend-9buv.onrender.com/api/verify", // ✅ full backend URL
+//   {},
+//   { withCredentials: true }
+// );
 
-        const { status, user } = data;
+//         const { status, user } = data;
 
-        if (status) {
-          setUsername(user);
-          toast.success(`Hello ${user}`, {
-            position: "top-right",
-          });
-        } else {
-          removeCookie("token");
-          navigate("/login");
-        }
-      } catch (error) {
-        console.error("Error verifying token:", error);
-        removeCookie("token");
-        navigate("/login");
-      } finally {
-        setLoading(false);
-      }
-    };
+//         if (status) {
+//           setUsername(user);
+//           toast.success(`Hello ${user}`, {
+//             position: "top-right",
+//           });
+//         } else {
+//           removeCookie("token");
+//           navigate("/login");
+//         }
+//       } catch (error) {
+//         console.error("Error verifying token:", error);
+//         removeCookie("token");
+//         navigate("/login");
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
 
-    verifyCookie();
-  }, [cookies, navigate, removeCookie]);
+//     verifyCookie();
+//   }, [cookies, navigate, removeCookie]);
 
-  const Logout = () => {
-    removeCookie("token");
-    navigate("/login");
-  };
+//   const Logout = () => {
+//     removeCookie("token");
+//     navigate("/login");
+//   };
 
-  // ✅ While verifying, show loading text (or a spinner)
-  if (loading) {
-    return (
-      <div style={{ textAlign: "center", marginTop: "2rem" }}>
-        <p>Loading... </p>
-      </div>
-    );
-  }
+//   // ✅ While verifying, show loading text (or a spinner)
+//   if (loading) {
+//     return (
+//       <div style={{ textAlign: "center", marginTop: "2rem" }}>
+//         <p>Loading... </p>
+//       </div>
+//     );
+//   }
 
   // ✅ Only renders when authenticated
   return (
     <>
-      <TopBar  Logout={Logout} />
+{/*       <TopBar  Logout={Logout} /> */}
       <Dashboard />
       <ToastContainer />
     </>
