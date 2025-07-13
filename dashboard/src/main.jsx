@@ -4,10 +4,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import './index.css'
 import Home from "./components/Home";
-import Login from "../src/pages/Login";
-import Signup from "../src/pages/Signup";
+// import Login from "../src/pages/Login";
+// import Signup from "../src/pages/Signup";
 
-import PrivateRoute from "./components/PrivateRoute";
+// import PrivateRoute from "./components/PrivateRoute";
 import { CookiesProvider } from "react-cookie";
 
 
